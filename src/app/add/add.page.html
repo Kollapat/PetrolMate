@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Data</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="stacked">Your Username:</ion-label>
+        <ion-input type="type" [(ngModel)]='user'></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">Distance Travelled (KM):</ion-label>
+        <ion-input type="type" [(ngModel)]='distance'></ion-input>
+    </ion-item>
+        
+    <ion-item>
+        <ion-label position="stacked">Amount (Litre):</ion-label>
+        <ion-input type="type" [(ngModel)]='litre'></ion-input>
+    </ion-item>
+        
+    <ion-item>
+        <ion-label position="stacked">Price (Baht):</ion-label>
+        <ion-input type="type" [(ngModel)]='price'></ion-input>
+    </ion-item>
+        
+     
+     
+      <ion-button expand='block' color={{buttonColor}} (click)='addData(user, distance, litre, price)' (click)='onClick(click)' (click)='changeId(user)'>{{buttonText}}</ion-button>
+      <ion-button expand='block' color='{{buttonColor2}}' routerLink='/home'>{{buttonText2}}</ion-button>
+      
+</ion-content>

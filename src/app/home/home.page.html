@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      PetrolMate
+    </ion-title>
+    <ion-button slot='end' fill='clear' routerLink='/switch'><ion-icon name='contacts' color='dark'></ion-icon></ion-button>
+    <ion-button slot='start' fill='clear' routerLink='/about'><ion-icon name='information-circle-outline' color='dark'></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <img src="https://www.theregreview.org/wp-content/uploads/2016/11/ThinkstockPhotos-529682660.jpg" />
+    <ion-card-content>
+        <ion-text color='dark'><h2><b>Your Latest Tank</b></h2></ion-text>
+        
+        <div *ngIf="viewList.length > 0">
+            <h4><b>Hello, {{viewList[0].username}}!</b></h4>
+            <br>
+            <h5><b>Your Consumption ($/KM): {{formatNumber(viewList[0].consumption)}}</b></h5>
+            <h5> {{viewList[0].datetime}}</h5>
+            <h5> Distance Travelled (KM): {{viewList[0].dist}}</h5>
+            <h5> Amount (Litres): {{viewList[0].litre}}</h5>
+            <h5> Price ($): {{viewList[0].price}}</h5>
+
+        </div>
+        <ion-button (click)='viewData("user")' fill='clear' expand='block'>Refresh</ion-button>
+      </ion-card-content>
+  </ion-card>
+  <ion-button expand='block' color='success' routerLink='/add' routerDirection='forward'>Add Data</ion-button>
+  <ion-button expand='block' color='dark' routerLink='/previous' routerDirection='forward'>Previous Tanks</ion-button>
+  <ion-button expand='block' color='medium' routerLink='/ranking' routerDirection='forward'>View Ranking</ion-button>
+  
+</ion-content>

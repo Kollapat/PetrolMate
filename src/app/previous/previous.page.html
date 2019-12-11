@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Previous Tanks</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button color="primary"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-content>
+            <div *ngIf="view$ | async as scList">
+              <div *ngFor="let sc of scList">
+                  <h5><b>{{sc.datetime}}</b></h5>
+                  <h5>Consumption ($/KM): {{formatNumber(sc.consumption)}}</h5>
+                  <h5> Distance Travelled (KM): {{sc.dist}}</h5>
+                  <h5> Amount (Litres): {{sc.litre}}</h5>
+                  <h5> Price ($): {{sc.price}}</h5>
+                  <br>
+            </div>
+          </div>
+          </ion-card-content>
+      </ion-card>
+      
+      
+</ion-content>

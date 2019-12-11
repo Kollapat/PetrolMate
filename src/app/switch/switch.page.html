@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Switch User</ion-title>
+    <ion-buttons slot='start'>
+        <ion-back-button color='primary'></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+      <ion-label position="stacked">Enter Your Username: </ion-label>
+      <ion-input type="type" [(ngModel)]='user'></ion-input>
+  </ion-item>
+    
+    <ion-button (click)='changeId(user)' expand='block' color='success' routerLink='/home'>OK</ion-button>
+</ion-content>
